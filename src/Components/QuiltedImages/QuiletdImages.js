@@ -5,6 +5,7 @@ import { Paper } from "@mui/material";
 import Container from "@mui/material/Container";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -16,6 +17,7 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 
 export default function QuiletdImages(props) {
+  const mobileVersion = useMediaQuery("(max-width:890px)");
   const images = props.images;
 
   const [open, setOpen] = React.useState(false);
@@ -26,13 +28,12 @@ export default function QuiletdImages(props) {
   return (
     <Paper
       sx={{
-        width: "95%",
-        marginInline: "auto",
+        width: "100%",
       }}
       elevation={12}
     >
       <Container
-        sx={{ paddingTop: "16px", fontSize: "1.5rem", fontWeight: "bold" }}
+        sx={{ paddingTop: "12px", fontSize: "1.5rem", fontWeight: "bold" }}
       >
         Concert acoustique au V & B de Labège
       </Container>
@@ -40,7 +41,7 @@ export default function QuiletdImages(props) {
         sx={{ height: 450, marginInline: "auto" }}
         variant="quilted"
         cols={4}
-        rowHeight={180}
+        rowHeight={mobileVersion ? 120 : 180}
       >
         {images.map((item) => (
           <ImageListItem

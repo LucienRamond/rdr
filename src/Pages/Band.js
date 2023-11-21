@@ -57,7 +57,7 @@ export default function Band() {
 
   return (
     <>
-      <Container>
+      <Container maxWidth={false}>
         <Paper className="band-page">
           <h1>Le groupe</h1>
           <div className="title-separator"></div>
@@ -101,12 +101,12 @@ export default function Band() {
                   <CardHeader title={member.name} />
                   <CardMedia
                     component="img"
-                    height={!mobileVersion ? "120" : "200"}
+                    sx={{ height: "170px" }}
                     image={member.picture}
                     alt={member.name}
                   />
                   <CardContent>
-                    <img src={member.logo} style={{ height: "40px" }} />
+                    <img src={member.logo} className="card-logo" />
                   </CardContent>
                 </Card>
               </Grid>
