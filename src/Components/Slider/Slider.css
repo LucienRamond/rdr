@@ -1,0 +1,9 @@
+.slider-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  font-family: "Century Gothic";
+  font-weight: 600;
+}

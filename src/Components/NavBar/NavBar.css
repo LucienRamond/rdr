@@ -1,0 +1,102 @@
+.toolbar {
+  background-color: #ba0502;
+  box-shadow: inset 2px 2px 50px black;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+.toolbar a {
+  color: white;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+.toolbar a.active {
+  color: black;
+  margin-top: 1rem;
+}
+
+.toolbar li {
+  font-family: "Century Gothic";
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.eclair {
+  z-index: 0;
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-27.5px);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+.toolbar a.active + img {
+  bottom: -42px;
+  opacity: 100%;
+}
+.toolbar li:nth-child(7) {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+.red-eyes-l {
+  position: absolute;
+  top: 79px;
+  left: 87px;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.red-eyes-r {
+  position: absolute;
+  top: 79px;
+  left: 106px;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.active-red-eyes {
+  opacity: 80%;
+}
+
+.logo-navbar {
+  height: 100px;
+  width: auto;
+}
+.separator {
+  width: 1px;
+  height: 50px;
+  background-color: white;
+}
+.separator-mobile {
+  height: 1px;
+  width: 150px;
+  background-color: white;
+}
+
+@media (max-width: 890px) {
+  .mobileNav {
+    flex-direction: column;
+  }
+  .toolbar a.active {
+    color: black;
+    margin-top: 0;
+  }
+  .toolbar li:first-of-type {
+    justify-content: left;
+    align-items: center;
+  }
+  .toolbar li:last-child {
+    justify-content: right;
+    align-items: center;
+  }
+  .toolbar li:nth-child(2) {
+    justify-content: center;
+    align-items: center;
+  }
+}
